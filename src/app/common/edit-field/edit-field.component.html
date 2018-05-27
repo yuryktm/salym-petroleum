@@ -1,0 +1,37 @@
+<div *ngIf="!isEdit">
+  <!--текст, числа-->
+  <span *ngIf="(fieldType == 'text') || (fieldType == 'number')" class="text-primary" (click)="onEdit()">
+    {{val ? val : 'выбрать'}}
+  </span>
+  <!--теги-->
+  <span *ngIf="fieldType == 'tags'" (click)="onEdit()" class="text-primary">
+    {{val.length ? val.join(', ') : 'выбрать'}}
+  </span>
+
+  <!--дата-->
+  <span *ngIf="fieldType == 'date'" class="text-primary" (click)="onEdit()">
+    {{val ? val.toLocaleDateString() : 'выбрать'}}
+  </span>
+</div>
+
+<div class="form-group row" *ngIf="isEdit">
+  <table>
+    <tr>
+      <td style="width: 200px"> <!--текст, числа-->
+        <input *ngIf="(fieldType == 'text') || (fieldType == 'number')" [type]="fieldType" class="form-control" [(ngModel)]="val">
+        <!--дата-->
+        <p-calendar *ngIf="fieldType == 'date'" [(ngModel)]="val" dateFormat="dd.mm.yy"
+                    [style]="{'width':'160px', 'border-radius': '0px'}" [inputStyle]="{'width': '160px', 'border-radius': '0px'}"
+                    [showIcon]="true"></p-calendar>
+        <!--теги-->
+        <p-chips *ngIf="fieldType == 'tags'" [(ngModel)]="val"></p-chips></td>
+      <td><button type="button" class="btn btn-primary labeled-icon btn-save" (click)="onSave()">
+        <i class="fa fa-check"></i>
+      </button></td>
+      <td> <button type="button" class="btn btn-light labeled-icon"  (click)="onCancel()">
+        <i class="fa fa-times"></i>
+      </button></td>
+    </tr>
+  </table>
+</div>
+

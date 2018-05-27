@@ -1,0 +1,45 @@
+<div class="container-fluid app-emp-card">
+  <!--Фото-->
+  <div class="row">
+    <div class="col-sm text-center">
+      <img [src]="employeeModel.imagePath" class="img-path">
+    </div>
+  </div>
+  <!--ФИО-->
+  <div class="row">
+    <div class="col-sm text-center">
+      <h4>{{ employeeModel.surname + ' ' + employeeModel.name + ' ' +  employeeModel.patronymicName }}</h4>
+    </div>
+  </div>
+  <!--Отчет-->
+  <div class="row text-center">
+    <div class="col-sm">
+      <div ngbDropdown class="d-inline-block">
+        <button class="btn btn-light emp-card-report" id="dropdownReport" ngbDropdownToggle>Отчет</button>
+        <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
+          <button class="dropdown-item">Отчет 1</button>
+          <button class="dropdown-item">Отчет 2</button>
+          <button class="dropdown-item">Отчет 3</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!--поля из настройки-->
+  <div *ngFor="let sField of settingsOfFields">
+    <div class="row row-field">
+      <div class="col-sm-5">
+        <label class="label-field">{{sField.label}}:</label>
+      </div>
+      <div class="col-sm-7">
+        <!--отображение редактируемого поля-->
+        <app-edit-field [value]="employeeModel[sField.fieldName]" [fieldType]="sField.fieldType" *ngIf="sField.editableField"
+                        (valueChanged)="employeeModel[sField.fieldName] = $event"></app-edit-field>
+        <!--отображение не редактируемого поля-->
+        <span *ngIf="!sField.editableField">{{ employeeModel[sField.fieldName] }}</span>
+      </div>
+    </div>
+
+    <hr *ngIf="sField.delimiter" style="height: 0; width: 99%; line-height:0;border-bottom:1px dashed #848484; background:none;"/>
+  </div>
+</div>

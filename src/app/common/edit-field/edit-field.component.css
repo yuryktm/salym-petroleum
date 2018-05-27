@@ -1,0 +1,18 @@
+span {
+  cursor: pointer;
+  border-bottom: dotted 2px;
+}
+
+.btn {
+  border-radius: 0;
+}
+
+input {
+  border-radius: 0;
+  width: initial;
+}
+
+.btn-save {
+  background-color: slateblue;
+}
+

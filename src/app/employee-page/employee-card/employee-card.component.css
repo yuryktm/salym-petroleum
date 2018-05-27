@@ -1,0 +1,25 @@
+.app-emp-card {
+  background-color:white;
+  margin: 5px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.img-path {
+  width: 80px;
+  border-radius: 50px;
+}
+
+.emp-card-report {
+  background-color: slateblue;
+  border-radius: 0;
+  color: white;
+}
+
+.label-field {
+  font-weight: bold;
+}
+
+.row-field {
+  line-height: 1.5;
+}
