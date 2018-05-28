@@ -9,7 +9,7 @@ import { EmployeeModel } from "../employee-model";
 })
 export class EmployeeCardComponent implements OnInit {
 
-  public employeeModel: EmployeeModel;  // модель
+  public employeeModel: EmployeeModel;  
   public settingsOfFields: any;         // Настройки для генерации полей
   private _employeeService;
 
@@ -29,7 +29,7 @@ export class EmployeeCardComponent implements OnInit {
     // editableField - флаг, true - если поле редактируемое
     // delimiter - разделитель(линия под полем)
     this.settingsOfFields = [
-      { label: 'Номер телефона', fieldName: 'phoneNumber', fieldType: 'number', editableField: true },
+      { label: 'Номер телефона', fieldName: 'phoneNumber', fieldType: 'text', editableField: true },
       { label: 'Должность', fieldName: 'position', fieldType: 'text', editableField: false },
       { label: 'Департамент', fieldName: 'department', fieldType: 'text', editableField: false },
       { label: 'Генподрядчик', fieldName: 'generalContractor', fieldType: 'text', editableField: false },
