@@ -1,6 +1,6 @@
 {
   "name": "salym-petroleum",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "license": "MIT",
   "scripts": {
     "ng": "ng",
@@ -26,8 +26,8 @@
     "zone.js": "^0.8.19",
     "bootstrap": "^4.1.1",
     "font-awesome": "^4.7.0",
-    "@ng-bootstrap/ng-bootstrap": "^1.1.1",
-    "primeng": "^5.2.0"
+    "ngx-bootstrap": "2.0.5",
+    "ngx-tags-input": "^1.1.1"
   },
   "devDependencies": {
     "@angular/cli": "~1.7.4",

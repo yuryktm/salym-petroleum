@@ -16,3 +16,19 @@ input {
   background-color: slateblue;
 }
 
+.date-picker {
+  width: 156px;
+}
+
+.btn-light {
+  border-color: #ced4da;
+}
+
+.tags-input {
+  border-radius: 0;
+  max-width: 200px;
+}
+
+.table-td-w {
+  width: 200px;
+}

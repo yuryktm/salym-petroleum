@@ -23,3 +23,11 @@
 .row-field {
   line-height: 1.5;
 }
+
+.delimiter {
+  height: 0;
+  width: 99%;
+  line-height:0;
+  border-bottom:1px dashed #848484;
+  background:none;
+}

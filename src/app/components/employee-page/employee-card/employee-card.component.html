@@ -14,13 +14,16 @@
   <!--Отчет-->
   <div class="row text-center">
     <div class="col-sm">
-      <div ngbDropdown class="d-inline-block">
-        <button class="btn btn-light emp-card-report" id="dropdownReport" ngbDropdownToggle>Отчет</button>
-        <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
-          <button class="dropdown-item">Отчет 1</button>
-          <button class="dropdown-item">Отчет 2</button>
-          <button class="dropdown-item">Отчет 3</button>
-        </div>
+      <div class="btn-group d-inline-block" dropdown>
+        <button id="button-basic-report" dropdownToggle type="button" class="btn btn-light dropdown-toggle emp-card-report"
+                aria-controls="dropdown-basic">Отчет<span class="caret"></span>
+        </button>
+        <ul id="dropdown-basic-report" *dropdownMenu class="dropdown-menu"
+            role="menu" aria-labelledby="button-basic">
+          <li role="menuitem"><a class="dropdown-item">Отчет 1</a></li>
+          <li role="menuitem"><a class="dropdown-item">Отчет 2</a></li>
+          <li role="menuitem"><a class="dropdown-item">Отчет 3</a></li>
+        </ul>
       </div>
     </div>
   </div>
@@ -39,7 +42,6 @@
         <span *ngIf="!sField.editableField">{{ employeeModel[sField.fieldName] }}</span>
       </div>
     </div>
-
-    <hr *ngIf="sField.delimiter" style="height: 0; width: 99%; line-height:0;border-bottom:1px dashed #848484; background:none;"/>
+    <hr *ngIf="sField.delimiter" class="delimiter"/>
   </div>
 </div>

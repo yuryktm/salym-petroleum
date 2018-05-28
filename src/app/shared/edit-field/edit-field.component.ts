@@ -35,4 +35,8 @@ export class EditFieldComponent implements OnInit {
   public onEdit() {
     this.isEdit = true;
   }
+
+  public arrayTagsObjToString(array) {
+    return array.map((x)=> x.displayValue).join(', ');
+  }
 }

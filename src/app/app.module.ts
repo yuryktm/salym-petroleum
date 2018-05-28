@@ -1,19 +1,20 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import { RouterModule } from '@angular/router';
 import { ROUTES } from './app.routes';
-import { ChipsModule } from 'primeng/primeng';
-import { CalendarModule } from 'primeng/calendar';
+import { TooltipModule } from 'ngx-bootstrap/tooltip';
+import { TagsInputModule } from 'ngx-tags-input/dist';
+import { BsDatepickerModule, BsDropdownModule } from 'ngx-bootstrap';
 
 import { AppComponent } from './app.component';
-import { EmployeePageComponent } from './employee-page/employee-page.component';
-import { TestPageComponent } from './test-page/test-page.component';
-import { EmployeeCardComponent } from './employee-page/employee-card/employee-card.component';
-import { EmployeeInfoComponent } from './employee-page/employee-info/employee-info.component';
-import { EmployeeAddInfoComponent } from './employee-page/employee-add-info/employee-add-info.component';
-import { EditFieldComponent } from './common/edit-field/edit-field.component';
+import { EmployeePageComponent } from './components/employee-page/employee-page.component';
+import { TestPageComponent } from './components/test-page/test-page.component';
+import { EmployeeCardComponent } from './components/employee-page/employee-card/employee-card.component';
+import { EmployeeInfoComponent } from './components/employee-page/employee-info/employee-info.component';
+import { EmployeeAddInfoComponent } from './components/employee-page/employee-add-info/employee-add-info.component';
+import { EditFieldComponent } from './shared/edit-field/edit-field.component';
+import {EmployeeService} from "./components/employee-page/employee.service";
 
 @NgModule({
   declarations: [
@@ -28,12 +29,14 @@ import { EditFieldComponent } from './common/edit-field/edit-field.component';
   imports: [
     BrowserModule,
     RouterModule.forRoot(ROUTES),
-    NgbModule.forRoot(),
     FormsModule,
-    ChipsModule,
-    CalendarModule
+    TooltipModule.forRoot(),
+    TagsInputModule.forRoot(),
+    BsDatepickerModule.forRoot(),
+    BsDropdownModule.forRoot()
   ],
-  providers: [],
+  providers: [EmployeeService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
+
