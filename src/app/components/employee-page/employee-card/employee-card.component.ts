@@ -9,7 +9,7 @@ import { EmployeeModel } from "../employee-model";
 })
 export class EmployeeCardComponent implements OnInit {
 
-  public employeeModel: EmployeeModel;  
+  public employeeModel: EmployeeModel;
   public settingsOfFields: any;         // Настройки для генерации полей
   private _employeeService;
 
