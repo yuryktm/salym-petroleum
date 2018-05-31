@@ -12,7 +12,7 @@
 
   <!--дата-->
   <span *ngIf="fieldType == 'date'" class="text-primary" (click)="onEdit()">
-    {{val ? val.toLocaleDateString() : 'выбрать'}}
+    {{val ? (val | date: "dd.MM.yyyy") : 'выбрать'}}
   </span>
 </div>
 

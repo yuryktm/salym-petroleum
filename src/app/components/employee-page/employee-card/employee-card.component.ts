@@ -1,6 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 import { EmployeeService } from "../employee.service";
 import { EmployeeModel } from "../employee-model";
+import {Observable} from "rxjs/Observable";
 
 @Component({
   selector: 'app-employee-card',
@@ -9,16 +10,12 @@ import { EmployeeModel } from "../employee-model";
 })
 export class EmployeeCardComponent implements OnInit {
 
-  public employeeModel: EmployeeModel;
+  @Input() employeeModel: EmployeeModel;
   public settingsOfFields: any;         // Настройки для генерации полей
-  private _employeeService;
 
-  constructor(employeeService: EmployeeService) {
-    this._employeeService = employeeService;
-  }
+  constructor() {}
 
   ngOnInit() {
-    this.employeeModel = this._employeeService.getEmployee();
     this.createSettingsOfFields();
   }
 
