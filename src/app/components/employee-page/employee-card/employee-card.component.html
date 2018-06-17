@@ -28,6 +28,19 @@
     </div>
   </div>
 
+  <!--Номер телефона-->
+  <div>
+    <div class="row row-field">
+      <div class="col-sm-5">
+        <label class="label-field">Номер телефона:</label>
+      </div>
+      <div class="col-sm-7">
+        <app-mask-edit-field [value]="employeeModel.phoneNumber" [fieldType]="'text'"
+                             (valueChanged)="employeeModel.phoneNumber = $event"></app-mask-edit-field>
+      </div>
+    </div>
+  </div>
+
   <!--поля из настройки-->
   <div *ngFor="let sField of settingsOfFields">
     <div class="row row-field">

@@ -14,7 +14,11 @@ import { EmployeeCardComponent } from './components/employee-page/employee-card/
 import { EmployeeInfoComponent } from './components/employee-page/employee-info/employee-info.component';
 import { EmployeeAddInfoComponent } from './components/employee-page/employee-add-info/employee-add-info.component';
 import { EditFieldComponent } from './shared/edit-field/edit-field.component';
-import {EmployeeService} from "./components/employee-page/employee.service";
+import { EmployeeService } from "./components/employee-page/employee.service";
+import { PhonePipe } from './shared/pipes/phone.pipe';
+import { MaskEditFieldPipe } from './shared/mask-edit-field.pipe';
+import { MaskEditFieldComponent } from './shared/mask-edit-field/mask-edit-field.component';
+import { MaskFormatterDirective } from './shared/directives/mask-formatter.directive';
 
 @NgModule({
   declarations: [
@@ -24,7 +28,11 @@ import {EmployeeService} from "./components/employee-page/employee.service";
     EmployeeCardComponent,
     EmployeeInfoComponent,
     EmployeeAddInfoComponent,
-    EditFieldComponent
+    EditFieldComponent,
+    PhonePipe,
+    MaskEditFieldPipe,
+    MaskEditFieldComponent,
+    MaskFormatterDirective
   ],
   imports: [
     BrowserModule,

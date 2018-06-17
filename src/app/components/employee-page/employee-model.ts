@@ -18,7 +18,7 @@ export class EmployeeModel {
   public categoryOfTractorDriver: Array<any>; // Категория машениста-тракториста
 
   constructor() {
-    this.imagePath = '../assets/img/ui-13.jpg';
+    this.imagePath = '../assets/img/ava.jpg';
     this.surname = 'Иванов';
     this.name = 'Иван';
     this.patronymicName = 'Иванович';

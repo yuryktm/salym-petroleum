@@ -1,0 +1,29 @@
+<!--<input type="text" class="form-control"-->
+<!--[(ngModel)]="employeeModel.phoneNumber | phone : '32'">-->
+
+<div *ngIf="!isEdit">
+  <span class="text-primary" (click)="onEdit()">
+    <!--{{val ? val : 'выбрать'}}-->
+     {{val ? (val| phone: '32') : 'выбрать'}}
+  </span>
+</div>
+
+<div class="form-group row" *ngIf="isEdit">
+  <table>
+    <tr>
+      <td class="table-td-w">
+        <input [type]="fieldType" class="form-control" [(ngModel)]="val" appMaskFormatter />
+        <!--<input [type]="fieldType" class="form-control" [(ngModel)]="val" appMaskFormatter />-->
+      <td>
+        <button type="button" class="btn btn-primary labeled-icon btn-save" (click)="onSave()">
+          <i class="fa fa-check"></i>
+        </button>
+      </td>
+      <td> <button type="button" class="btn btn-light labeled-icon"  (click)="onCancel()">
+        <i class="fa fa-times"></i>
+      </button></td>
+    </tr>
+  </table>
+</div>
+
+
